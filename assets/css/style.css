@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.accueil {
+    width: 100%;
+    /* height: auto; */
+    background: url("../img/projet.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.display-1 {
+    margin-bottom: 100px;
+    font-size: bold;
+    margin-top: 100px;
+}
+
+.lead {
+    line-height: 50px;
+    margin-bottom: 150px;
+}
