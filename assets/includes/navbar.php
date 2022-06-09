@@ -10,7 +10,7 @@
                 <a href="index.php">Accueil</a>
                 <a href="#">Projets</a>
                 <a href="#">Me contacter</a>
-                <a href="#">Inscription</a>
+                <a href="inscription.php">Inscription</a>
                 <a href="#">Connexion</a>
             </div>
         </div>
