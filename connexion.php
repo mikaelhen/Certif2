@@ -12,6 +12,8 @@
 <body>
     <div class="container">
         <?php
+        session_start();
+
         require_once 'assets/includes/bdd.php';
 
 
@@ -22,7 +24,23 @@
             $passwordcon = sha1($_POST['passwordcon']);
             if (!empty($pseudocon) and !empty($mailcon) and !empty($passwordcon))
             {
+                $requser = $Bdd->prepare("SELECT * FROM membres WHERE pseudo = ? and email = ? and motdepasse = ?");
+                $requser->execute(array($pseudocon, $mailcon, $passwordcon));
+                $userexist = $requser->rowCount();
+                if($userexist == 1)
+                {
+                    $userinfo = $requser->fetch();
+                    $_SESSION['id'] = $userinfo ['id'];
+                    $_SESSION['pseudo'] = $userinfo ['pseudo'];
+                    $_SESSION['email'] = $userinfo ['email'];
+                    $_SESSION['password'] = $userinfo ['password'];
+                    header("Location:index.php?id=".$_SESSION['id']);
+                }
+                else
+                {
+                   $erreur = "Mauvais e-mail ou de passe";
 
+                }
             }
             else
             {
