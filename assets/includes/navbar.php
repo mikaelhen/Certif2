@@ -6,9 +6,8 @@ require_once 'assets/includes/bdd.php';
 // if (isset($_GET['id']) AND $_GET['id'] > 0)
 //  {
 if (isset($_SESSION["id"])) {
-    $getid = intval($_GET['id']);
-    $requser = $Bdd->prepare('SELECT * FROM membres WHERE id = ?');
-    $requser->execute(array($getid));
+    $requser = $Bdd->prepare('SELECT * FROM membres WHERE id = :id');
+    $requser->execute(array(":id" => $_SESSION["id"] ));        
     $userinfo = $requser->fetch();
 } else {
 }

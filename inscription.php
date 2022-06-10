@@ -1,3 +1,17 @@
+<?php 
+session_start();
+
+if(isset($_SESSION['id']))
+{
+    header('Location: index.php');
+}
+else
+{
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -116,3 +130,6 @@
 </body>
 
 </html>
+<?php
+}
+?>
