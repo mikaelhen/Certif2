@@ -14,7 +14,7 @@
     include "assets/includes/navbar.php";
     ?>
     <!-- accueil -->
-    <section class="accueil bg-dark d-flex w-100  flex-column justify-content-center align-items-center">
+    <section class="accueil bg-light d-flex w-100  flex-column justify-content-center align-items-center">
         <!-- <img src="../Certfif/assets/img/projet.jpg"> -->
         <h1 class="display-1 text-white text-center">Site de projets</h1>
         <p class="lead text-center text-white px-4">Je me nomme Mikaël Henaux, je suis acuellement en formation de

@@ -7,7 +7,7 @@ require_once 'assets/includes/bdd.php';
 //  {
 if (isset($_SESSION["id"])) {
     $requser = $Bdd->prepare('SELECT * FROM membres WHERE id = :id');
-    $requser->execute(array(":id" => $_SESSION["id"] ));        
+    $requser->execute(array(":id" => $_SESSION["id"]));
     $userinfo = $requser->fetch();
 } else {
 }
@@ -38,6 +38,9 @@ if (isset($_SESSION["id"])) {
                 <a href="#">Me contacter</a>
 
                 <?php
+                if ((isset($_SESSION["id"])) and ($userinfo['role'] == "1")) {
+                    echo "<a href='ajouterProjet.php'>Panel  admin</a>";
+                }
                 if (isset($_SESSION["id"])) {
                 ?>
                     <a href="deconnexion.php">Se déconnecter</a>
@@ -52,8 +55,8 @@ if (isset($_SESSION["id"])) {
                 if (empty($_SESSION["id"])) {
                 ?>
 
-                <a href="inscription.php">Inscription</a>
-                <a href="connexion.php">Connexion</a>
+                    <a href="inscription.php">Inscription</a>
+                    <a href="connexion.php">Connexion</a>
                 <?php
                 }
                 ?>

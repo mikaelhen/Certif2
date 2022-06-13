@@ -19,7 +19,8 @@ else
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>Inscription</title>
 </head>
 
@@ -109,7 +110,8 @@ else
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Confirmation de votre mot de passe</label>
-                        <input class="form-control" type="password" name="password2" value="" placeholder="Mot de passe">
+                        <input class="form-control" type="password" name="password2" value=""
+                            placeholder="Mot de passe">
                     </div>
                     <div class="mb-3">
                         <button type="submit" name="forminscription" class="btn btn-primary">Inscription</button>
@@ -120,6 +122,9 @@ else
 
                 if (isset($erreur)) {
                     echo '<font color="red">' . $erreur . '</font>';
+                }
+                if (isset($erreur2)) {
+                    echo '<font color="green">' . $erreur2 . '</font>';
                 }
 
 

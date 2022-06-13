@@ -44,7 +44,7 @@
             }
             else
             {
-                $erreur =  "Tous les champs doivent être complétés !";
+                $erreur2 =  "Tous les champs doivent être complétés !";
             }
 
         }
@@ -69,7 +69,7 @@
                         <input class="form-control" type="password" name="passwordcon" value="" placeholder="Mot de passe">
                     </div>
                     <div class="mb-3">
-                        <button type="submit" name="formconnexion" class="btn btn-primary">Inscription</button>
+                        <button type="submit" name="formconnexion" class="btn btn-primary">Connexion</button>
                     </div>
                 </form>
 
@@ -77,6 +77,9 @@
 
                 if (isset($erreur)) {
                     echo '<font color="red">' . $erreur . '</font>';
+                }
+                if (isset($erreur2)) {
+                    echo '<font color="green">' . $erreur2 . '</font>';
                 }
 
 
