@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once 'assets/includes/bdd.php';
-if($_SESSION['password']){
+if ($_SESSION['password']) {
     header('Location:connexion.php');
 }
 include "assets/includes/head.php";
@@ -28,8 +28,20 @@ include "assets/includes/head.php";
                 $titre = htmlspecialchars($_POST['titre']);
                 $description = nl2br(htmlspecialchars($_POST['description']));
 
-                $insererProjet = $Bdd->prepare('INSERT INTO projets(titre, description)VALUES(?, ?)');
-                $insererProjet->execute(array($titre, $description));
+                $dataImage = [
+                    'img_lien' => 'assets/img/' . $_FILES['image']['name'],
+                    'img_file' => $_FILES['image']['tmp_name']
+                ];
+
+                $data = [
+                    'img_lien' => $_FILES['image']['name']
+                ];
+
+
+                move_uploaded_file($dataImage['img_file'], $dataImage['img_lien']);
+
+                $insererProjet = $Bdd->prepare('INSERT INTO projets(titre, description, image) VALUES(?, ?, ?)');
+                $insererProjet->execute(array($titre, $description, $data['img_lien']));
 
                 $erreur2 = "le projet a éte envoyé !";
             } else {
@@ -42,7 +54,7 @@ include "assets/includes/head.php";
         <div class="col-6">
             <h1>Publier un projets</h1>
 
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label class="form-label">Titre</label>
                     <input class="form-control" type="text" name="titre" value="" placeholder="Titre">
@@ -52,9 +64,13 @@ include "assets/includes/head.php";
                     <label class="form-label">Titre</label>
                     <textarea class="form-control" type="text" name="description" value="" placeholder="description"></textarea>
                 </div>
+                <div class="showimage">
+                    <input type="file" accept="image/jpeg, image/png" name="image">
+                </div>
                 <div class="mb-3">
                     <button type="submit" name="envoi" class="btn btn-primary">Envoyer</button>
                 </div>
+
             </form>
             <?php
 

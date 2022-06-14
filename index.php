@@ -70,38 +70,41 @@
 
     <div class="container-fluid py-5 px-5 bg-light">
 
+
         <h2 class="display-4 text-center mb-5 text-decoration-underline">Projets réalisés</h2>
         <!-- 576 xs - > 576px S - > 768px M - > 992px L - > 1200px Extra large -->
 
         <div class="row justify-content-center">
+            <?php
+            $recupProjets = $Bdd->query("SELECT * FROM projets");
+            while ($projets = $recupProjets->fetch()) {
+            ?>
+                <div class="col-md-3 col-sm-6">
 
-            <div class="col-md-3 col-sm-6">
+                    <div class="card mb-4 shadow-sm">
 
-                <div class="card mb-4 shadow-sm">
-
-                    <img src="assets/img/ardennemetropole.PNG" alt="ardennes_metropole" class="w-100">
-                    <div class="div card-body">
-                        <p class="card-text">
-                            Site dédié à la recherche d'emploi.<br>
-                            Réalisé au sein d'Ardenne Métropole.<br>
-                            Stage du 02 au 30 mai 2002.
-                        </p>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                Contact
-                            </button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary mx-2">
-                                Découvrir
-                            </button>
+                        <img src="assets/img/<?= $projets['image']; ?>" alt="ardennes_metropole" class="w-100">
+                        <div class="div card-body">
+                            <h3><?= $projets['titre']; ?></h3>
+                            <p class="card-text">
+                                <?= $projets['description']; ?>
+                            </p>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">
+                                    Contact
+                                </button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary mx-2">
+                                    Découvrir
+                                </button>
+                            </div>
                         </div>
                     </div>
+
                 </div>
+            <?php } ?>
+            <!-- <div class="col-md-3 col-sm-6"> -->
 
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-
-                <div class="card mb-4 shadow-sm">
+            <!-- <div class="card mb-4 shadow-sm">
 
                     <img src="assets/img/tips.PNG" alt="tips" class="w-100">
                     <div class="div card-body">
@@ -145,7 +148,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div> -->
 
         </div>
     </div>

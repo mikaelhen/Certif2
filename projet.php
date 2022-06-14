@@ -28,6 +28,9 @@ include "assets/includes/head.php";
             <div class="col-6 d-flex flex-column justify-content-center align-items-center" style="border: 1px solid black;">
                 <h1><?= $projets['titre']; ?></h1>
                 <p><?= $projets['description']; ?></p>
+                <div class="col-3 d-flex flex-column justify-content-center">
+                    <img src=" assets/img/<?= $projets['image']; ?>">
+                </div>
                 <div class="bouton">
                     <a href="supprimerProjet.php?id=<?= $projets['id']; ?>"><button type="button" class="btn btn-sm btn-outline-secondary bg-danger text-white my-2">
                             Supprimer le projet
@@ -74,7 +77,7 @@ include "assets/includes/head.php";
                         Ajouter un Projet
                     </button></a>
                 <a href="index.php"><button type="button" class="btn btn-sm btn-outline-secondary bg-secondary text-white my-2">
-                       Accueil
+                        Accueil
                     </button></a>
             </div>
         </div>
