@@ -39,7 +39,7 @@ if (isset($_SESSION["id"])) {
 
                 <?php
                 if ((isset($_SESSION["id"])) and ($userinfo['role'] == "1")) {
-                    echo "<a href='ajouterProjet.php'>Panel  admin</a>";
+                    echo "<a href='projet.php'>Panel  admin</a>";
                 }
                 if (isset($_SESSION["id"])) {
                 ?>

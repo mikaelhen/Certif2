@@ -16,8 +16,8 @@
     <!-- accueil -->
     <section class="accueil bg-light d-flex w-100  flex-column justify-content-center align-items-center">
         <!-- <img src="../Certfif/assets/img/projet.jpg"> -->
-        <h1 class="display-1 text-white text-center">Site de projets</h1>
-        <p class="lead text-center text-white px-4">Je me nomme Mikaël Henaux, je suis acuellement en formation de
+        <h1 class="display-1 text-dark text-center">Site de projets</h1>
+        <p class="lead text-center text-dark px-4">Je me nomme Mikaël Henaux, je suis acuellement en formation de
             <span style="font-weight: bold;">developpeur
                 web</span>.<br>
             Dans le cadre de ma formation, il m'a été demandé de réaliser des projets.<br>

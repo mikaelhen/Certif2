@@ -1,12 +1,12 @@
 <?php
 require_once 'assets/includes/bdd.php';
 if ((isset($_GET['id'])) and (!empty($_GET['id']))) {
-    $getid2 = $_GET['id'];
+    $getid = $_GET['id'];
     $recupProjets = $Bdd->prepare('SELECT * FROM projets WHERE id = ?');
-    $recupProjets->execute(array($getid2));
+    $recupProjets->execute(array($getid));
     if($recupProjets->rowCount() > 0){
         $suppresionprojet = $Bdd->prepare('DELETE FROM projets WHERE id = ?');
-        $suppresionprojet->execute(array($getid2));
+        $suppresionprojet->execute(array($getid));
         header('location: projet.php?a=v');
     }
     else

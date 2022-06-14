@@ -28,26 +28,32 @@ include "assets/includes/head.php";
             <div class="col-6 d-flex flex-column justify-content-center align-items-center" style="border: 1px solid black;">
                 <h1><?= $projets['titre']; ?></h1>
                 <p><?= $projets['description']; ?></p>
-                <a href="supprimerProjet.php?id=<?= $projets['id']; ?>"><button type="button" class="btn btn-sm btn-outline-secondary bg-danger text-white my-2">
-                        Supprimer le projet
-                    </button></a>
+                <div class="bouton">
+                    <a href="supprimerProjet.php?id=<?= $projets['id']; ?>"><button type="button" class="btn btn-sm btn-outline-secondary bg-danger text-white my-2">
+                            Supprimer le projet
+                        </button></a>
+                    <a href="modifierProjet.php?id=<?= $projets['id']; ?>"><button type="button" class="btn btn-sm btn-outline-secondary bg-success text-white my-2">
+                            Modifier le projet
+                        </button></a>
+                </div>
             </div>
 
         </div>
+
         <?php
-            if (isset($_GET['a'])) {
-                if ($_GET['a'] == 'v') {
-                    $erreur2 = '<div class="col-12"></div>
+        if (isset($_GET['a'])) {
+            if ($_GET['a'] == 'v') {
+                $erreur2 = '<div class="col-12"></div>
             <div class="col-12 d-flex justify-content-center">Votre projet est bien supprimé</div>';
-                }
             }
+        }
 
         ?>
         <br>
     <?php
-    } 
+    }
     ?>
-     <?php
+    <?php
 
     if (isset($erreur)) {
         echo '<font color="red">' . $erreur . '</font>';
@@ -55,8 +61,25 @@ include "assets/includes/head.php";
     if (isset($erreur2)) {
         echo '<font color="green">' . $erreur2 . '</font>';
     }
-   
+
     ?>
+
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 d-flex flex-column justify-content-center align-items-center">
+            <h1></h1>
+            <p></p>
+            <div class="bouton">
+                <a href="ajouterProjet.php"><button type="button" class="btn btn-sm btn-outline-secondary bg-primary text-white my-2">
+                        Ajouter un Projet
+                    </button></a>
+                <a href="index.php"><button type="button" class="btn btn-sm btn-outline-secondary bg-secondary text-white my-2">
+                       Accueil
+                    </button></a>
+            </div>
+        </div>
+
+    </div>
 </body>
 
 </html>
